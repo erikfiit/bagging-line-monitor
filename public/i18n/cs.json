@@ -1,0 +1,46 @@
+{
+  "app": {
+    "skipLink": "Přeskočit na obsah",
+    "logoAlt": "Bühler, zpět na přehled",
+    "loading": "Načítání strojů…",
+    "error": "Stroje se nepodařilo načíst.",
+    "retry": "Zkusit znovu"
+  },
+  "header": {
+    "language": "Jazyk"
+  },
+  "nav": {
+    "label": "Stroje"
+  },
+  "states": {
+    "running": "Běží",
+    "alarm": "Alarm",
+    "warning": "Varování"
+  },
+  "types": {
+    "scale": "Váha",
+    "attacher": "Nasazovač",
+    "packer": "Balička",
+    "closer": "Uzavírač"
+  },
+  "connection": {
+    "connecting": "Připojování",
+    "connected": "Připojeno",
+    "reconnecting": "Obnovování spojení"
+  },
+  "overview": {
+    "title": "Přehled linky",
+    "empty": "Žádné stroje."
+  },
+  "detail": {
+    "back": "Zpět na přehled",
+    "state": "Stav",
+    "name": "Název",
+    "inState": "V tomto stavu již",
+    "history": "Historie",
+    "noHistory": "Zatím žádné změny.",
+    "changedTo": "změněno na",
+    "notFound": "Stroj nenalezen",
+    "notFoundText": "Stroj s tímto ID neexistuje."
+  }
+}

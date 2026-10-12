@@ -1,0 +1,46 @@
+{
+  "app": {
+    "skipLink": "Skip to content",
+    "logoAlt": "Bühler, back to overview",
+    "loading": "Loading machines…",
+    "error": "The machines could not be loaded.",
+    "retry": "Retry"
+  },
+  "header": {
+    "language": "Language"
+  },
+  "nav": {
+    "label": "Machines"
+  },
+  "states": {
+    "running": "Running",
+    "alarm": "Alarm",
+    "warning": "Warning"
+  },
+  "types": {
+    "scale": "Scale",
+    "attacher": "Attacher",
+    "packer": "Packer",
+    "closer": "Closer"
+  },
+  "connection": {
+    "connecting": "Connecting",
+    "connected": "Connected",
+    "reconnecting": "Reconnecting"
+  },
+  "overview": {
+    "title": "Line overview",
+    "empty": "No machines."
+  },
+  "detail": {
+    "back": "Back to overview",
+    "state": "State",
+    "name": "Name",
+    "inState": "In this state for",
+    "history": "History",
+    "noHistory": "No changes yet.",
+    "changedTo": "changed to",
+    "notFound": "Machine not found",
+    "notFoundText": "There is no machine with this ID."
+  }
+}

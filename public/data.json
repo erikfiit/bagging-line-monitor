@@ -1,0 +1,30 @@
+[
+  {
+    "id": "scale",
+    "type": "scale",
+    "name": "SC-01",
+    "state": "running",
+    "secondsInState": 754
+  },
+  {
+    "id": "attacher",
+    "type": "attacher",
+    "name": "AT-01",
+    "state": "alarm",
+    "secondsInState": 95
+  },
+  {
+    "id": "packer",
+    "type": "packer",
+    "name": "PK-01",
+    "state": "running",
+    "secondsInState": 1320
+  },
+  {
+    "id": "closer",
+    "type": "closer",
+    "name": "CL-01",
+    "state": "warning",
+    "secondsInState": 40
+  }
+]
