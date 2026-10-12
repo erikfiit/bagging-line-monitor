@@ -1,0 +1,15 @@
+<h1 class="sr-only">{{ 'overview.title' | translate }}</h1>
+<ul class="line">
+  @for (machine of machineService.machines(); track machine.id; let last = $last) {
+    <li class="step">
+      <a class="tile-link" [routerLink]="['/machine', machine.id]">
+        <app-machine-tile [machine]="machine" variant="overview" />
+      </a>
+      @if (!last) {
+        <span class="connector state-{{ machine.state }}" aria-hidden="true"></span>
+      }
+    </li>
+  } @empty {
+    <li>{{ 'overview.empty' | translate }}</li>
+  }
+</ul>

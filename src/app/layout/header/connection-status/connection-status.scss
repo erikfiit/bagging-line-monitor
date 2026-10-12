@@ -1,0 +1,23 @@
+:host {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: var(--color-offline);
+  transition: background-color 0.3s;
+
+  &.connected {
+    background: var(--color-running-icon);
+  }
+
+  &.reconnecting {
+    background: var(--color-reconnecting);
+  }
+}

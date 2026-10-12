@@ -1,0 +1,17 @@
+<span
+  class="state-icon material-symbols-outlined"
+  aria-hidden="true"
+  [matTooltip]="'states.' + machine().state | translate"
+  matTooltipTouchGestures="off"
+>
+  {{ stateIcon() }}
+</span>
+@if (variant() === 'overview') {
+  <span class="machine-icon material-symbols-outlined" aria-hidden="true">
+    {{ typeIcon() }}
+  </span>
+}
+<span class="label text-overflow" [title]="machine().name">{{
+  'types.' + machine().type | translate
+}}</span>
+<span class="sr-only">, {{ machine().name }}, {{ 'states.' + machine().state | translate }}</span>

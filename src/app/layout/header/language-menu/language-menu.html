@@ -1,0 +1,27 @@
+<button type="button" class="trigger" [matMenuTriggerFor]="menu">
+  <span class="material-symbols-outlined" aria-hidden="true">language</span>
+  <span class="sr-only">{{ 'header.language' | translate }}:</span>
+  <span class="code">{{ current().toUpperCase() }}</span>
+  <span class="material-symbols-outlined arrow" aria-hidden="true">arrow_drop_down</span>
+</button>
+
+<mat-menu #menu="matMenu" xPosition="before">
+  <div role="group" [attr.aria-label]="'header.language' | translate">
+    @for (language of languages(); track language) {
+      <button
+        mat-menu-item
+        role="menuitemradio"
+        [lang]="language"
+        [attr.aria-checked]="language === current()"
+        (click)="selected.emit(language)"
+      >
+        <span class="item">
+          <span class="material-symbols-outlined check" aria-hidden="true">
+            {{ language === current() ? 'check' : '' }}
+          </span>
+          {{ languageNames[language] }}
+        </span>
+      </button>
+    }
+  </div>
+</mat-menu>

@@ -1,0 +1,92 @@
+.header {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    'logo info'
+    'status status';
+  align-items: center;
+  gap: 0.25rem 1rem;
+  padding: 0.25rem 1rem;
+  border-bottom: 0.1875rem solid var(--color-header-line);
+  background: var(--color-page);
+  box-shadow: 0 0.125rem 0.5rem rgb(0 0 0 / 0.1);
+}
+
+.logo {
+  display: inline-flex;
+  grid-area: logo;
+  align-items: center;
+  min-height: 2.75rem;
+
+  img {
+    display: block;
+    width: 7rem;
+    height: auto;
+  }
+}
+
+.info {
+  display: flex;
+  grid-area: info;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-self: end;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.info-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.status {
+  display: flex;
+  grid-area: status;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-self: end;
+  gap: 0.25rem 1rem;
+}
+
+.date,
+.user-name {
+  display: none;
+}
+
+@media (max-width: 399px) {
+  .clock-icon {
+    display: none;
+  }
+}
+
+@media (min-width: 600px) {
+  .logo img {
+    width: 11rem;
+  }
+
+  .info {
+    gap: 1rem;
+    font-size: 1rem;
+  }
+
+  .date {
+    display: inline;
+  }
+
+  .user-name {
+    display: inline-block;
+    max-width: 10rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .header {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: 'logo status info';
+  }
+}

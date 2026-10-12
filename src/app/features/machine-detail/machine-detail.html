@@ -1,0 +1,52 @@
+<a class="back" routerLink="/overview">
+  <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
+  {{ 'detail.back' | translate }}
+</a>
+
+@if (machine(); as machine) {
+  <div class="summary card">
+    <app-machine-tile aria-hidden="true" [machine]="machine" variant="overview" />
+    <div class="facts">
+      <h1>{{ 'types.' + machine.type | translate }}</h1>
+      <p>
+        {{ 'detail.name' | translate }}: <strong>{{ machine.name }}</strong>
+      </p>
+      <p>
+        {{ 'detail.state' | translate }}:
+        <strong>{{ 'states.' + machine.state | translate }}</strong>
+      </p>
+      <p>
+        {{ 'detail.inState' | translate }}
+        <strong class="duration">{{ timeInState() }}</strong>
+      </p>
+    </div>
+  </div>
+
+  <section class="history-card card">
+    <h2 id="history-title">{{ 'detail.history' | translate }}</h2>
+    <div class="history-scroll" role="region" tabindex="0" aria-labelledby="history-title">
+      @if (history().length > 0) {
+        <ul class="history">
+          @for (change of history(); track change) {
+            <li>
+              <time [attr.datetime]="change.timestamp | date: 'yyyy-MM-ddTHH:mm:ss'">{{
+                change.timestamp | date: 'HH:mm:ss'
+              }}</time>
+              <span>{{ 'states.' + change.from | translate }}</span>
+              <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+              <span class="sr-only">{{ 'detail.changedTo' | translate }}</span>
+              <span>{{ 'states.' + change.to | translate }}</span>
+            </li>
+          }
+        </ul>
+      } @else {
+        <p class="empty">{{ 'detail.noHistory' | translate }}</p>
+      }
+    </div>
+  </section>
+} @else {
+  <div class="card">
+    <h1>{{ 'detail.notFound' | translate }}</h1>
+    <p>{{ 'detail.notFoundText' | translate }}</p>
+  </div>
+}

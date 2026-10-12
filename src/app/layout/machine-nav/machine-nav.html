@@ -1,0 +1,14 @@
+<nav [attr.aria-label]="'nav.label' | translate">
+  @for (machine of machineService.machines(); track machine.id) {
+    <a
+      class="tab"
+      #tab
+      [routerLink]="['/machine', machine.id]"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      (isActiveChange)="showTab($event, tab)"
+    >
+      <app-machine-tile [machine]="machine" variant="nav" />
+    </a>
+  }
+</nav>

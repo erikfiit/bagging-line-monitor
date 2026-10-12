@@ -1,0 +1,49 @@
+:host {
+  display: block;
+  border-bottom: 0.0625rem solid var(--color-nav);
+  background: var(--color-page);
+}
+
+nav {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.tab {
+  display: flex;
+  flex: 1 0 auto;
+  min-width: 7rem;
+  max-width: 14rem;
+  border-radius: 0.5rem;
+  color: inherit;
+  text-decoration: none;
+
+  &.active {
+    box-shadow:
+      0 0 0 0.125rem var(--color-page),
+      0 0 0 0.25rem var(--color-ink);
+  }
+
+  &:focus-visible {
+    outline-offset: -0.25rem;
+  }
+}
+
+app-machine-tile {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (min-width: 900px) {
+  .tab {
+    flex: 0 0 auto;
+    min-width: 10rem;
+  }
+}

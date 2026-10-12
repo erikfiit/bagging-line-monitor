@@ -1,0 +1,14 @@
+@if (alarms() > 0) {
+  <span class="badge state-alarm" [title]="'states.alarm' | translate">
+    <span class="material-symbols-outlined" aria-hidden="true">{{ stateIcons.alarm }}</span>
+    {{ alarms() }}
+    <span class="sr-only">{{ 'states.alarm' | translate }}</span>
+  </span>
+}
+@if (warnings() > 0) {
+  <span class="badge state-warning" [title]="'states.warning' | translate">
+    <span class="material-symbols-outlined" aria-hidden="true">{{ stateIcons.warning }}</span>
+    {{ warnings() }}
+    <span class="sr-only">{{ 'states.warning' | translate }}</span>
+  </span>
+}

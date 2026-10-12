@@ -1,0 +1,30 @@
+<header class="header">
+  <a class="logo" routerLink="/overview">
+    <img ngSrc="assets/buhler-logo.svg" width="180" height="34" [alt]="'app.logoAlt' | translate" />
+  </a>
+  <div class="info">
+    <span class="info-item">
+      <span class="clock-icon material-symbols-outlined" aria-hidden="true">schedule</span>
+      <time [attr.datetime]="now() | date: 'yyyy-MM-ddTHH:mm'">
+        <span class="date">{{ now() | date: 'dd.MM.yyyy' }}</span>
+        {{ now() | date: 'HH:mm' }}
+      </time>
+    </span>
+    <app-language-menu
+      [languages]="languageService.languages"
+      [current]="languageService.current()"
+      (selected)="languageService.set($event)"
+    />
+    <span class="info-item" role="img" [attr.aria-label]="userName()">
+      <span class="material-symbols-outlined" aria-hidden="true">account_circle</span>
+      <span class="user-name text-overflow" [title]="userName()">{{ userName() }}</span>
+    </span>
+  </div>
+  <div class="status">
+    <app-status-badges
+      [alarms]="machineService.alarmCount()"
+      [warnings]="machineService.warningCount()"
+    />
+    <app-connection-status [status]="machineService.connection()" />
+  </div>
+</header>
