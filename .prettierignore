@@ -1,0 +1,5 @@
+dist
+.angular
+package-lock.json
+docs
+.claude
